@@ -14,7 +14,7 @@ def file_reading_and_writing():
         # Append text to the file
         with open('example.txt', 'a') as file:
             append_text = input("Enter the text to append: ")
-            file.write(append_text + '\n')
+            file.write('' + append_text + '\n')
 
         # Read the updated content
         with open('example.txt', 'r') as file:
