@@ -158,23 +158,16 @@ def regular_expression_tasks():
 
         if option == '1':
             # Pattern Matching
-            print("\nSelect a pattern matching option:")
-            print("1. Search for a specific pattern")
-            print("2. Search for all occurrences of a pattern")
-            pattern_match_option = input("Enter your choice: ")
-
-            if pattern_match_option == '1':
+      
                 pattern = input('\nEnter the pattern to search for: ')
                 matches = re.findall(pattern, content)
                 print(f'\nFound {len(matches)} matches for the pattern "{pattern}"')
+                print("Words that include the pattern:")
+                for word in content.split():
+                    if re.search(pattern, word):
+                        print(word)
                 print(matches)
-            elif pattern_match_option == '2':
-                pattern = input('\nEnter the pattern to search for: ')
-                matches = re.findall(pattern, content)
-                print(f'\nFound {len(matches)} matches for the pattern "{pattern}"')
-                print(matches)
-            else:
-                print("Invalid option. Please try again.")
+      
         elif option == '2':
             # Text Extraction
             print("\nSelect a text extraction option:")
